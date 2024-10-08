@@ -26,19 +26,15 @@ export default function Login() {
   }, []);
 
   const navigate = useNavigate();
-  const appUrl = `${process.env.REACT_APP_API_URL}`;
+  const appUrl = import.meta.REACT_APP_API_URL;
   const mutation = useMutation({
     mutationFn: async (newUser) => {
-      const response = await axios.post(
-        `${appUrl}/api/v1/user/login`,
-        newUser,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
-      );
+      const response = await axios.post(`${appUrl}/user/login`, newUser, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
       return response.data;
     },
     onSuccess: (data) => {

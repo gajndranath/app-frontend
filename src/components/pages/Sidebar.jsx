@@ -66,11 +66,11 @@ const leftSidebar = [
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const appUrl = `${process.env.REACT_APP_API_URL}`;
+  const appUrl = import.meta.REACT_APP_API_URL;
   console.log(appUrl);
   const logoutHandler = async () => {
     try {
-      const res = await axios.post(`${appUrl}/api/v1/user/logout`, {
+      const res = await axios.post(`${appUrl}/user/logout`, {
         withCredentials: true,
       });
       if (res.data.success) {
