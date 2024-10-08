@@ -26,10 +26,11 @@ export default function Login() {
   }, []);
 
   const navigate = useNavigate();
+  const appUrl = `${process.env.REACT_APP_API_URL}`;
   const mutation = useMutation({
     mutationFn: async (newUser) => {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/v1/user/register`,
+        `${appUrl}/api/v1/user/login`,
         newUser,
         {
           headers: {

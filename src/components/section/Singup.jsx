@@ -17,11 +17,12 @@ export default function Signup() {
   const [errors, setErrors] = useState({});
   const [usernameAvailable, setUsernameAvailable] = useState(true);
   const navigate = useNavigate();
+  const appUrl = `${process.env.REACT_APP_API_URL}`;
 
   const mutation = useMutation({
     mutationFn: async (newUser) => {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/v1/user/register`,
+        `${appUrl}/api/v1/user/register`,
         // "http://localhost:8000/api/v1/user/register",
         newUser,
         {

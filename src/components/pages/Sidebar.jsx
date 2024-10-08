@@ -69,7 +69,7 @@ const Sidebar = () => {
   const logoutHandler = async () => {
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/v1/user/register`,
+        `${process.env.REACT_APP_API_URL}/api/v1/user/logout`,
         {
           withCredentials: true,
         }
