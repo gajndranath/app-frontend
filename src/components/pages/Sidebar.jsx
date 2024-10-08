@@ -66,14 +66,13 @@ const leftSidebar = [
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const appUrl = `${process.env.REACT_APP_API_URL}`;
+  console.log(appUrl);
   const logoutHandler = async () => {
     try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/v1/user/logout`,
-        {
-          withCredentials: true,
-        }
-      );
+      const res = await axios.post(`${appUrl}/api/v1/user/logout`, {
+        withCredentials: true,
+      });
       if (res.data.success) {
         localStorage.removeItem("token");
         navigate("/login");

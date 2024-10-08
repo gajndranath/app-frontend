@@ -3,6 +3,8 @@ node_modules/
 .pnpm/
 .vite/
 
+.env
+
 # Build output
 dist/
 *.local
