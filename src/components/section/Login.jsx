@@ -29,7 +29,7 @@ export default function Login() {
   const mutation = useMutation({
     mutationFn: async (newUser) => {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/user/login",
+        `${process.env.REACT_APP_API_URL}/api/v1/user/register`,
         newUser,
         {
           headers: {
