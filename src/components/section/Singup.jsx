@@ -17,7 +17,7 @@ export default function Signup() {
   const [errors, setErrors] = useState({});
   const [usernameAvailable, setUsernameAvailable] = useState(true);
   const navigate = useNavigate();
-  const appUrl = import.meta.env.REACT_APP_API_URL;
+  const appUrl = import.meta.env.VITE_API_URL;
 
   const mutation = useMutation({
     mutationFn: async (newUser) => {

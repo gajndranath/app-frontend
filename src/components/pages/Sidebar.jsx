@@ -66,7 +66,7 @@ const leftSidebar = [
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const appUrl = import.meta.env.REACT_APP_API_URL;
+  const appUrl = import.meta.env.VITE_API_URL;
   const logoutHandler = async () => {
     try {
       const res = await axios.post(`${appUrl}/user/logout`, {
